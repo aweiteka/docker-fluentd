@@ -51,7 +51,7 @@ RUN yum update -y --setopt=tsflags=nodocs \
 COPY fluent.conf /etc/fluent/fluent.conf
 RUN  mkdir /etc/fluent/config.d
 COPY config.d/*.conf /etc/fluent/config.d/
-
+USER 1001
 WORKDIR ${HOME}
 CMD ["fluentd"]
 
